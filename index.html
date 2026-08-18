@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sanjitha | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        nav h2 {
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 50px;
+
+            background:
+                linear-gradient(135deg, #1e293b, #0f172a);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #38bdf8;
+            box-shadow: 0 0 35px rgba(56, 189, 248, 0.5);
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h3 {
+            color: #cbd5e1;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 8px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            background: #2563eb;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 90px 10%;
+            min-height: 60vh;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 45px;
+            color: #38bdf8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.8);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #cbd5e1;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .skill {
+            padding: 12px 22px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 25px;
+            color: #e2e8f0;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: #2563eb;
+            transform: scale(1.05);
+        }
+
+        /* PROJECTS */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        /* CONTACT */
+
+        .contact-info {
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin: 12px;
+            color: #cbd5e1;
+        }
+
+        .contact-info a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #020617;
+            color: #94a3b8;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h3 {
+                font-size: 18px;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 80px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <h2>Sanjitha</h2>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HOME / FIRST PAGE -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <!-- YOUR PHOTO -->
+            <img src="myphoto.jpg"
+                 alt="Sanjitha Profile Photo"
+                 class="profile-img">
+
+            <h1>Hello, I'm <span>Sanjitha</span></h1>
+
+            <h3>B.E. Computer Science and Engineering</h3>
+
+            <p>
+                Aspiring Software Developer passionate about
+                software development, web technologies,
+                artificial intelligence and problem solving.
+            </p>
+
+            <a href="#about" class="btn">Explore My Portfolio</a>
+
+            <a href="#contact" class="btn">Contact Me</a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <h2 class="section-title">About Me</h2>
+
+            <div class="card">
+
+                <h3>Who Am I?</h3>
+
+                <p>
+                    I am Sanjitha, a Computer Science and Engineering
+                    student passionate about building innovative
+                    software solutions. I enjoy learning new
+                    technologies, solving programming problems and
+                    developing real-world projects.
+                </p>
+
+                <br>
+
+                <p>
+                    I am a quick learner, hardworking and adaptable
+                    person with a strong interest in software
+                    development and Artificial Intelligence.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <div class="container">
+
+            <h2 class="section-title">Education</h2>
+
+            <div class="card">
+
+                <h3>B.E. Computer Science and Engineering</h3>
+
+                <p>
+                    <strong>College:</strong>
+                    VSB College of Engineering Technical Campus
+                </p>
+
+                <p>
+                    <strong>Current Year:</strong> 3rd Year
+                </p>
+
+                <p>
+                    <strong>Aggregate:</strong> 83%
+                </p>
+
+                <p>
+                    <strong>Graduation Year:</strong> 2028
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Higher Secondary Education</h3>
+
+                <p>
+                    12th Percentage: 76%
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Secondary Education</h3>
+
+                <p>
+                    10th Percentage: 78%
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <h2 class="section-title">Technical Skills</h2>
+
+        <div class="card skills-list">
+
+            <p><strong>Programming Languages:</strong> Java, Python, C</p>
+
+            <p><strong>Web Technologies:</strong> HTML, CSS, JavaScript</p>
+
+            <p><strong>Database:</strong> MySQL</p>
+
+            <p><strong>Tools:</strong> Git, GitHub, VS Code</p>
+
+            <p><strong>Core Concepts:</strong> Data Structures, Algorithms, OOP</p>
+
+            <p><strong>Areas of Interest:</strong> Software Development, AI, Web Development</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="container">
+
+            <h2 class="section-title">Projects</h2>
+
+            <div class="project-grid">
+
+                <div class="card">
+
+                    <h3>ProfitPilot</h3>
+
+                    <p>
+                        An AI-powered MSME Business Assistant
+                        that helps small businesses manage sales,
+                        inventory, expenses and business decisions.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>HealthSense AI</h3>
+
+                    <p>
+                        An AI-based healthcare solution designed
+                        to help users understand medical reports
+                        and access useful healthcare information.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Personal Portfolio</h3>
+
+                    <p>
+                        A responsive personal portfolio website
+                        created using HTML, CSS and JavaScript
+                        to showcase my skills, projects and
+                        achievements.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Government Portal Aggregator</h3>
+
+                    <p>
+                        A concept for bringing multiple official
+                        government services into one organized
+                        platform for easier and safer access.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CERTIFICATIONS -->
+
+    <section id="certifications">
+
+        <div class="container">
+
+            <h2 class="section-title">Certifications</h2>
+
+            <div class="card">
+
+                <h3>Certification 01</h3>
+
+                <p>
+                     CryptoGraphy and Cybersecurity- Infosys
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Certification 02</h3>
+
+                <p>
+                    Android Basics in Java– Infosys
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Certification 03</h3>
+
+                <p>
+                     Data Structure and Algorithm using Python– Infosys
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACHIEVEMENTS -->
+
+    <section id="achievements">
+
+        <div class="container">
+
+            <h2 class="section-title">Achievements</h2>
+
+            <div class="card">
+
+                <h3>Hackathons</h3>
+
+                <p>
+                    Participated in hackathons and worked on
+                    innovative technology-based solutions.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>LeetCode</h3>
+
+                <p>
+                    Actively practicing Data Structures and
+                    Algorithms through coding problems.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Other Achievements</h3>
+
+                <p>
+                    Add your awards, competitions and other
+                    achievements here.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <h2 class="section-title">Contact Me</h2>
+
+            <div class="contact-info">
+
+                <p>
+                    📧 Email:
+                    <a href="sanjitha2905@gmail.com">
+                        sanjitha2905@gmail.com
+                    </a>
+                </p>
+
+                <p>
+                    📍 Location:
+                    Coimbatore, Tamil Nadu
+                </p>
+
+                <p>
+                    💼 LinkedIn:
+                    <a href="https://linkedin.com/in/sanjitha-p-44823940b/" target="_blank">
+                            https://linkedin.com/in/sanjitha-p-44823940b/
+                    </a>
+                </p>
+
+                <p>
+                    💻 GitHub:
+                    <a href="https://github.com/sanjitha2905" target="_blank">
+                        https://github.com/sanjitha2905
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Sanjitha | Aspiring Software Developer
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
